@@ -1,2 +1,0 @@
-rand40.txt
-randA.txt
