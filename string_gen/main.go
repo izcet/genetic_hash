@@ -15,7 +15,7 @@ func	setFile(filename string) (*os.File, error) {
 
 func	main() {
 	global := "global_list.txt"
-	numStrings := 60
+	numStrings := 256
 	
 	file, err := setFile(global)
 	if (err != nil) {
@@ -27,6 +27,9 @@ func	main() {
 
 	makeFileList("40 random characters", "rand40.txt", rand40, file, numStrings)
 	makeFileList("increasing numbers of 'a'", "randA.txt", randA, file, numStrings)
+	makeFileList("random combinations of 'a' and 'b' of random lengths", "randRandAB.txt", randRandAB, file, numStrings)
+	makeFileList("foos, bars, and bazs", "fooBarBaz.txt", fooBarBaz, file, numStrings)
+	makeFileList("fizzbuzz iterations", "fizzBuzz.txt", fizzBuzz, file, numStrings)
 }
 
 func	makeFileList(description, filename string, function func() string, global *os.File, numStrings int) {
@@ -62,7 +65,7 @@ func	getList(function func() string, numStrings int) map[string]int {
 	list := make(map[string]int)
 	for ; len(list) < numStrings; {
 		str := function()
-		fmt.Println(str)
+		//fmt.Println(str) // debugging individual strings
 		if _, ok := list[str]; ok == false {
 			list[str] = 0
 		}

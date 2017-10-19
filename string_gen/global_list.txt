@@ -1,2 +1,5 @@
 rand40.txt
 randA.txt
+randRandAB.txt
+fooBarBaz.txt
+fizzBuzz.txt
