@@ -25,11 +25,16 @@ func	main() {
 	defer file.Close()
 	fmt.Println("Created", global)
 
-	makeFileList("40 random characters", "rand40.txt", rand40, file, numStrings)
+	makeFileList("40 random letters", "rand40.txt", rand40, file, numStrings)
 	makeFileList("increasing numbers of 'a'", "randA.txt", randA, file, numStrings)
-	makeFileList("random combinations of 'a' and 'b' of random lengths", "randRandAB.txt", randRandAB, file, numStrings)
+	makeFileList("random combinations of 'a' and 'b'", "randAB.txt", randAB, file, numStrings)
 	makeFileList("foos, bars, and bazs", "fooBarBaz.txt", fooBarBaz, file, numStrings)
 	makeFileList("fizzbuzz iterations", "fizzBuzz.txt", fizzBuzz, file, numStrings)
+	makeFileList("herp derps", "herpDerp.txt", herpDerp, file, numStrings)
+	makeFileList("random alphanumerics", "alphaNum.txt", alphaNum, file, numStrings)
+	makeFileList("random numbers", "digits.txt", digits, file, numStrings)
+	makeFileList("sequential numbers", "counters.txt", counters, file, numStrings)
+	makeFileList("random email addresses", "emails.txt", emails, file, numStrings)
 }
 
 func	makeFileList(description, filename string, function func() string, global *os.File, numStrings int) {
